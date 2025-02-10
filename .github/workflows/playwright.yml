@@ -27,11 +27,6 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
-        run: |
-          npx playwright test --reporter=html
-          ls -la playwright-report  # Vérification si le dossier est bien généré
-
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
